@@ -27,3 +27,6 @@ age_group <- function(age){
 filtered_Spotify$Age.group <-mapply(age_group, mentalHealth$Age)
 
 mean_anxiety_by_age_group <- aggregate(Anxiety ~ Age.group, data = filtered_Spotify, mean)
+mean_depression_by_age_group <- aggregate(Depression ~ Age.group, data = filtered_Spotify, mean)
+mean_ocd_by_age_group <- aggregate(OCD ~ Age.group, data = filtered_Spotify, mean)
+
