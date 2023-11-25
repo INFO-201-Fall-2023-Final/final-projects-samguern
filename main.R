@@ -4,8 +4,6 @@ mentalHealth <- read.csv("mxmh_survey_results.csv")
 mentalHealth <- na.omit(mentalHealth)
 spotifyData <- read.csv("Spotify_data.csv")
 spotifyData <- na.omit(spotifyData)
-#test
-unique(spotifyData$Age)
 
 filtered_Spotify <- filter(mentalHealth, str_detect(Primary.streaming.service, "Spotify"),)
 
