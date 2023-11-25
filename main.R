@@ -2,7 +2,8 @@ mentalHealth <- read.csv("mxmh_survey_results.csv")
 spotifyData <- read.csv("Spotify_data.csv")
 
 unique(spotifyData$Age)
-filtered_Spotify <- filter(mentalHeatlh, Primary.Streaming.Service = "Spotify")
+filtered_Spotify <- filter(mentalHeatlh, Primary.streaming.service = "Spotify")
+
 age_group <- function(age){
   if(is.na(age) || age < 6){
     return(NULL)
