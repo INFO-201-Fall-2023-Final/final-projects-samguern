@@ -38,6 +38,7 @@ getMode <- function(v){
 }
 
 most_common_time_slot_by_age_group <- aggregate(music_time_slot ~ Age, data = spotifyData, getMode)
+most_common_listening_device_by_age_group <- aggregate(spotify_listening_device ~ Age, data = spotifyData, getMode)
 
 age_group_spotify_summary <- data.frame(Age.group = unique(filtered_Spotify$Age.group))
 
@@ -46,3 +47,4 @@ age_group_spotify_summary <- left_join(age_group_spotify_summary ,mean_depressio
 age_group_spotify_summary <- left_join(age_group_spotify_summary ,mean_ocd_by_age_group)
 age_group_spotify_summary <- left_join(age_group_spotify_summary ,mean_hours_by_age_group)
 age_group_spotify_summary <- left_join(age_group_spotify_summary ,most_common_time_slot_by_age_group, by = c("Age.group"= "Age"))
+age_group_spotify_summary <- left_join(age_group_spotify_summary ,most_common_listening_device_by_age_group, by = c("Age.group"= "Age"))
