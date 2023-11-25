@@ -1,8 +1,9 @@
 mentalHealth <- read.csv("mxmh_survey_results.csv")
 spotifyData <- read.csv("Spotify_data.csv")
-
+#test
 unique(spotifyData$Age)
-filtered_Spotify <- filter(mentalHealth, Primary.streaming.service = "Spotify")
+
+filtered_Spotify <- filter(mentalHealth, Primary.Streaming.Service = "Spotify")
 
 age_group <- function(age){
   if(is.na(age) || age < 6){
@@ -22,6 +23,7 @@ age_group <- function(age){
   } 
 }
 
-mentalHealth$Age.group <-mapply(age_group, mentalHealth$Age)
+#mentalHealth$Age.group <-mapply(age_group, mentalHealth$Age)
+filtered_Spotify$Age.group <-mapply(age_group, mentalHealth$Age)
 
-
+mean_anxiety_by_age_group <- aggregate(Anxiety ~ Age.group, data = filtered_Spotify, mean)
