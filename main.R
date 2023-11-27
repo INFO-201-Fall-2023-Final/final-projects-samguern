@@ -27,24 +27,16 @@ age_group <- function(age){
 
 filtered_Spotify$Age.group <-mapply(age_group, filtered_Spotify$Age)
 
-mean_anxiety_by_age_group <- aggregate(Anxiety ~ Age.group, data = filtered_Spotify, mean)
-mean_depression_by_age_group <- aggregate(Depression ~ Age.group, data = filtered_Spotify, mean)
-mean_ocd_by_age_group <- aggregate(OCD ~ Age.group, data = filtered_Spotify, mean)
-mean_hours_by_age_group <- aggregate(Hours.per.day ~ Age.group, data = filtered_Spotify, mean)
+summarized_filtered_Spotify <- aggregate(cbind(Anxiety, Depression, OCD, Hours.per.day) ~ Age.group, data = filtered_Spotify, mean)
 
 getMode <- function(v){
   uniquevar <- unique(v)
   uniquevar[which.max(tabulate(match(v, uniquevar)))]
 }
 
-most_common_time_slot_by_age_group <- aggregate(music_time_slot ~ Age, data = spotifyData, getMode)
-most_common_listening_device_by_age_group <- aggregate(spotify_listening_device ~ Age, data = spotifyData, getMode)
+summarized_spotifyData <- aggregate(cbind(music_time_slot, spotify_listening_device) ~ Age, data = spotifyData, getMode)
 
-age_group_spotify_summary <- data.frame(Age.group = unique(filtered_Spotify$Age.group))
 
-age_group_spotify_summary <- left_join(age_group_spotify_summary ,mean_anxiety_by_age_group)
-age_group_spotify_summary <- left_join(age_group_spotify_summary ,mean_depression_by_age_group)
-age_group_spotify_summary <- left_join(age_group_spotify_summary ,mean_ocd_by_age_group)
-age_group_spotify_summary <- left_join(age_group_spotify_summary ,mean_hours_by_age_group)
-age_group_spotify_summary <- left_join(age_group_spotify_summary ,most_common_time_slot_by_age_group, by = c("Age.group"= "Age"))
-age_group_spotify_summary <- left_join(age_group_spotify_summary ,most_common_listening_device_by_age_group, by = c("Age.group"= "Age"))
+age_group_spotify_summary <- left_join(summarized_filtered_Spotify, summarized_spotifyData, by = c("Age.group" = "Age"))
+
+write.csv(age_group_spotify_summary, "C:/repo/final-projects-samguern/age_group_spotify_summary.csv", row.names=FALSE)
