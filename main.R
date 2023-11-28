@@ -49,5 +49,11 @@ for(i in 1:length(age_counts_mentalh)){
   age_group_spotify_summary[i,"Num_Responses"] <- as.numeric(age_counts_mentalh[i]) + as.numeric(age_counts_spotify[i])
 }
 
+while_working_mentalh <- table(filter(filtered_Spotify, While.working == "Yes")$Age.group)
+while_working_spotify <- table(filter(filtered_spofityData , str_detect(music_lis_frequency, "Office|Study"))$Age)
+
+for(i in 1:length(while_working_mentalh)){
+  age_group_spotify_summary[i,"Listen_While_Working"] <- as.numeric(while_working_mentalh[i]) + as.numeric(while_working_spotify[i])
+}
 
 write.csv(age_group_spotify_summary, "C:/repo/final-projects-samguern/age_group_spotify_summary.csv", row.names=FALSE)
