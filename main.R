@@ -1,4 +1,3 @@
-# https://www.figma.com/file/1UGt3zAW1liWGweVvp44EJ/Untitled?type=design&mode=design&t=3p5Pu55Z5ta2FMVy-1
 library(dplyr)
 library(stringr)
 mentalHealth <- read.csv("mxmh_survey_results.csv")
@@ -39,5 +38,6 @@ summarized_spotifyData <- aggregate(cbind(music_time_slot, spotify_listening_dev
 
 
 age_group_spotify_summary <- left_join(summarized_filtered_Spotify, summarized_spotifyData, by = c("Age.group" = "Age"))
+fav_music_genre_spotify <- left_join(filtered_Spotify, spotifyData, by = c("Fav.genre" = "fav_music_genre"))
 
 write.csv(age_group_spotify_summary, "C:/repo/final-projects-samguern/age_group_spotify_summary.csv", row.names=FALSE)
