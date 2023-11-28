@@ -48,6 +48,7 @@ age_counts_spotify <- table(filtered_spofityData$Age)
 for(i in 1:length(age_counts_mentalh)){
   age_group_spotify_summary[i,"Num_Responses"] <- as.numeric(age_counts_mentalh[i]) + as.numeric(age_counts_spotify[i])
 }
-
+yes_count <- sum(filtered_Spotify$While.working == "Yes")
+no_count <- sum(filtered_Spotify$While.working == "No")
 
 write.csv(age_group_spotify_summary, "C:/repo/final-projects-samguern/age_group_spotify_summary.csv", row.names=FALSE)
