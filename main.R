@@ -38,6 +38,6 @@ summarized_spotifyData <- aggregate(cbind(music_time_slot, spotify_listening_dev
 
 
 age_group_spotify_summary <- left_join(summarized_filtered_Spotify, summarized_spotifyData, by = c("Age.group" = "Age"))
-fav_music_genre_spotify <- left_join(filtered_Spotify, spotifyData, by = c("Fav.genre" = "fav_music_genre"))
+fav_music_genre_spotify <- left_join(filtered_Spotify, spotifyData, by = c("Fav.genre" = "fav_music_genre"), relationship = "many-to-many"))
 
 write.csv(age_group_spotify_summary, "C:/repo/final-projects-samguern/age_group_spotify_summary.csv", row.names=FALSE)
