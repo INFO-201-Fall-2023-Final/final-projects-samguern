@@ -6,7 +6,7 @@ ui <- fluidPage(
   titlePanel("My app"),
   
   # Sidebar layout with input and output definitions ----
-  navbarPage("",
+ # navbarPage("",
     
     # Sidebar panel for inputs ----
     #sidebarPanel(),
@@ -15,16 +15,16 @@ ui <- fluidPage(
     #mainPanel(
       
       # Output: Tabset w/ plot, summary, and table ----
-      tabsetPanel(type = "tabs",
-                  tabPanel("Intro", textOutput("intro")),
+    tabsetPanel(type = "tabs",
+                tabPanel("Intro", textOutput("intro")),
                   # for boxed text tabPanel("Intro", verbatimTextOutput("intro")),
-                  tabPanel("Story 1", plotOutput("story1")),
-                  tabPanel("Story 2", textOutput("story2")),
+                tabPanel("Story 1", plotOutput("story1")),
+                tabPanel("Story 2", textOutput("story2")),
                   tabPanel("Story 3", tableOutput("story3"))
       )
       
   )
-)
+
 
 server <- function(input, output){
   
