@@ -46,7 +46,7 @@ server <- function(input, output){
       br(),
       ("Number that listen to music while working"),
       br(),
-      h2("Why this is important"),
+      h2("Why this is important:"),
       p("Our data provides crucial information about mental health patterns and music listening habits, as categorized by age."),
       ("It can be used in future implementation of medical treatments,"),
       ("or developing apps aimed towards specific age categories"),
