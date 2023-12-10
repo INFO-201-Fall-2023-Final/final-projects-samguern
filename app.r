@@ -47,7 +47,7 @@ server <- function(input, output){
       ("to music the least amount of hours in a day. Therefore, this type"),
       ("of user research shows how it would be least beneficial to market"),
       ("a music app to this category. Or, it could potentially be beneficial"),
-      ("to know this information in aiming to target a new age category.")
+      ("to know this information in aiming to target a new age category."),
       #includeHTML((src = "~Desktop/open-graph-default.png"), width = 600)
       #tags$img(src = "~Desktop/open-graph-default.png", width = 600),
     )
