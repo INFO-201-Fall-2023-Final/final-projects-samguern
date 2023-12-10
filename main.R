@@ -44,7 +44,17 @@ server <- function(input, output){
       br(),
       ("Number of responses"),
       br(),
-      ("Number that listen to music while working")
+      ("Number that listen to music while working"),
+      br(),
+      h2("Why this is important"),
+      p("Our data provides crucial information about mental health patterns and music listening habits, as categorized by age."),
+      ("It can be used in future implementation of medical treatments,"),
+      ("or developing apps aimed towards specific age categories"),
+      ("For example, according to our data, the age group 35-60 listens"),
+      ("to music the least amount of hours in a day. Therefore, this type"),
+      ("of user research shows how it would be least beneficial to market"),
+      ("a music app to this category. Or, it could potentially be beneficial"),
+      ("to know this information in aiming to target a new age category.")
       #includeHTML((src = "~Desktop/open-graph-default.png"), width = 600)
       #tags$img(src = "open-graph-default.png", width = 600),
     )
