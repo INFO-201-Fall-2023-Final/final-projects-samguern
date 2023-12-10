@@ -15,6 +15,7 @@ ui <- fluidPage(
   )
 
 
+
 server <- function(input, output){
   output$intro <- renderUI({
     tagList(
@@ -33,8 +34,11 @@ server <- function(input, output){
       br(),
       ("Number of responses"),
       br(),
-      ("Number that listen to music while working"),
+      p("Number that listen to music while working"),
       br(),
+      a("What is Spotify?", 
+        href = "https://support.spotify.com/us/article/what-is-spotify/", 
+        target = "_blank"), # need to open in browser to click on link
       h2("Why this is important:"),
       p("Our data provides crucial information about mental health patterns and music listening habits, as categorized by age."),
       ("It can be used in future implementation of medical treatments,"),
@@ -45,7 +49,7 @@ server <- function(input, output){
       ("a music app to this category. Or, it could potentially be beneficial"),
       ("to know this information in aiming to target a new age category.")
       #includeHTML((src = "~Desktop/open-graph-default.png"), width = 600)
-      #tags$img(src = "open-graph-default.png", width = 600),
+      #tags$img(src = "~Desktop/open-graph-default.png", width = 600),
     )
   })
   
