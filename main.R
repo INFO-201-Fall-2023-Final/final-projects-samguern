@@ -56,4 +56,7 @@ for(i in 1:length(while_working_mentalh)){
   age_group_spotify_summary[i,"Listen_While_Working"] <- as.numeric(while_working_mentalh[i]) + as.numeric(while_working_spotify[i])
 }
 
-write.csv(age_group_spotify_summary, "C:/repo/final-projects-samguern/age_group_spotify_summary.csv", row.names=FALSE)
+#write.csv(age_group_spotify_summary, "C:/repo/final-projects-samguern/age_group_spotify_summary.csv", row.names=FALSE)
+#write.csv(filtered_Spotify, "C:/repo/final-projects-samguern/filtered_Spotify.csv", row.names=FALSE)
+#write.csv(filtered_spofityData, "C:/repo/final-projects-samguern/filtered_spofityData", row.names=FALSE)
+
