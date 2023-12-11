@@ -58,5 +58,5 @@ for(i in 1:length(while_working_mentalh)){
 
 #write.csv(age_group_spotify_summary, "C:/repo/final-projects-samguern/age_group_spotify_summary.csv", row.names=FALSE)
 #write.csv(filtered_Spotify, "C:/repo/final-projects-samguern/filtered_Spotify.csv", row.names=FALSE)
-#write.csv(filtered_spofityData, "C:/repo/final-projects-samguern/filtered_spofityData", row.names=FALSE)
+#write.csv(filtered_spofityData, "C:/repo/final-projects-samguern/filtered_spofityData.csv", row.names=FALSE)
 

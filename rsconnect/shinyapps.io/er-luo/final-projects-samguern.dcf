@@ -5,7 +5,7 @@ account: er-luo
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10769613
-bundleId: 8033572
+bundleId: 8033585
 url: https://er-luo.shinyapps.io/final-projects-samguern/
 version: 1
 asMultiple: FALSE

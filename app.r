@@ -1,11 +1,12 @@
-#library(shiny)
+#https://er-luo.shinyapps.io/final-projects-samguern/
+library(shiny)
 library(plotly)
 library(dplyr)
 library(stringr)
 library(ggplot2)
 filtered_Spotify <- read.csv("filtered_Spotify.csv")
-filtered_spofityData <- read.csv("filtered_spofityData")
-age_group_spotify_summary <- read.csv("age_group_spotify_summary")
+filtered_spofityData <- read.csv("filtered_spofityData.csv")
+age_group_spotify_summary <- read.csv("age_group_spotify_summary.csv")
 
 ui <- fluidPage(
   tags$style(HTML("
